@@ -1,0 +1,25 @@
+
+library(shiny)
+library(bslib)
+library(highcharter)
+library(ggplot2)
+library(plotly)
+library(thematic)
+library(lubridate)
+library(dplyr)
+
+function(input, output, session) {
+  AEP <- read.csv('Base3.csv')
+  output$Q1Count <- renderText({
+    Q1_low_total <- sum(table(AEP$Q5...En)[1:2])
+    Q1_low_total
+  })
+  
+  output$Q1Perc <- renderText({
+    Q1_low_total <- sum(table(AEP$Q5...En)[1:2])
+    Q1_low_perc <- (Q1_low_total / length(AEP$Q5...En)) * 100
+    Q1_low_perc
+  })
+}
+    
+

@@ -1,0 +1,31 @@
+
+library(shiny)
+library(bslib)
+library(highcharter)
+library(ggplot2)
+library(plotly)
+library(thematic)
+library(lubridate)
+library(dplyr)
+library(bsicons)
+# Define UI for application that draws a histogram
+page_navbar( 
+
+  nav_panel(
+            page_sidebar(value_box(title= 'En Comparación con el Año Anterior:',
+                                   paste0(,'% ','de los Participantes')),
+                         'Respondieron que NO LES ALCANZA', showcase =bs_icon('graph-down-arrow'),theme='red'),
+              sidebar = NULL,
+              title = NULL,
+              fillable = TRUE,
+              fillable_mobile = FALSE,
+              theme = bs_theme(),
+              window_title = NA,
+              lang = NULL
+            ),
+            
+  nav_panel("B", "Page B content"), 
+  nav_panel("C", "Page C content"), 
+  title = "App with navbar", 
+  id = "page", 
+) 
